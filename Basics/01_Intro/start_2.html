@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app-2">
+        <!--директивы добавляют к DOM элементам особое реативное поведение -->
+        <!--В данном примере директива говорит:
+        “сохраняй значение title этого элемента актуальным при изменении свойства message у экземпляра Vue”.-->
+        <span v-bind:title="message">
+    Подержи курсор надо мной пару секунд,
+    чтобы увидеть динамически связанное значение title!
+        </span>
+    </div>
+
+    <script>
+        var app2 = new Vue({
+            el: '#app-2',
+            data: {
+                message: 'Вот когда вы загрузили эту страницу: ' + new Date()
+            }
+        })
+    </script>
+</body>
+
+</html>

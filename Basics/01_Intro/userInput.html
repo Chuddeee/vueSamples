@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+
+    <div id="app-5">
+        <p>{{ message }}</p>
+        <!--Чтобы пользователи могли взаимодействовать с вашим приложением,
+     используйте директиву v-on для наблюдения за событиями, указав метод-обработчик-->
+        <button v-on:click="reverseMessage">Обратить порядок букв в сообщении</button>
+    </div>
+    <!--Обратите внимание, что в методе мы просто обновляем состояние нашего приложения,
+     не трогая DOM — всю работу с DOM производит Vue, а код, который вы пишете, занимается только логикой приложения.-->
+    <script>
+        var app5 = new Vue({
+            el: '#app-5',
+            data: {
+                message: 'Hello Vue.js!'
+            },
+            methods: {
+                reverseMessage: function () {
+                    this.message = this.message.split('').reverse().join('')
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

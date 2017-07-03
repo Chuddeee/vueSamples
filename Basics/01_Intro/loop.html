@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>
+
+</head>
+
+<body>
+    <button id="add">Добавить</button>
+    <div id="app-4">
+        <ol>
+            <!--директива v-for может быть использована для отображения списков, используя данные из массива-->
+            <!--В консоли, введите app4.todos.push({ text: 'Новый элемент' }). Вы увидите, что к списку добавился новый элемент.-->
+            <li v-for="todo in todos">
+                {{ todo.text }}
+            </li>
+        </ol>
+    </div>
+    <script>
+        document.getElementById('add').addEventListener('click', function(){
+            app4.todos.push({ text: 'Новый элемент' });
+        },false);
+        var app4 = new Vue({
+            el: '#app-4',
+            data: {
+                todos: [
+                    { text: 'Посадить дерево' },
+                    { text: 'Построить дом' },
+                    { text: 'Вырастить сына' }
+                ]
+            }
+        });
+    </script>
+</body>
+
+</html>
